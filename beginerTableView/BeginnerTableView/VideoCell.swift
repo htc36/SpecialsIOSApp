@@ -10,12 +10,15 @@ import UIKit
 
 class VideoCell: UITableViewCell {
 
-    @IBOutlet weak var videoImageView: UIImageView!
     @IBOutlet weak var videoTitleLabel: UILabel!
     
+    @IBOutlet weak var priceLabell: UILabel!
     func setVideo(video: Video) {
-        videoImageView.image = video.image
         videoTitleLabel.text = video.title
+    }
+    func setItem(item : Items){
+        videoTitleLabel.text=item.name
+        priceLabell.text=item.salePrice
     }
     
 }

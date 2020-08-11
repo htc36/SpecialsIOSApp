@@ -18,10 +18,9 @@ class VideoListScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        videos = createArray()
         let url = "http://45.76.124.20:8080/api/getProducts?dateOfSpecials=04/08/20&limit=20"
         getData(from: url)
-        print(items)
+        videos = createArray()
     }
     
     private func getData(from url: String){
@@ -40,14 +39,22 @@ class VideoListScreen: UIViewController {
             guard let json = result else {
                 return
             }
+            
             self.items = json.rows
-            print(json.rows[0])
+            DispatchQueue.main.async {
+                print(self.items)
+                self.tableView.reloadData()
+            }
             })
 
             task.resume()
-        
+            self.tableView.reloadData()
+        print(self.items)
+
+
     }
     
+
     
     func createArray() -> [Video] {
         
@@ -66,14 +73,17 @@ class VideoListScreen: UIViewController {
 extension VideoListScreen: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return videos.count
+        return items.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let video = videos[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! VideoCell
-        cell.setVideo(video: video)
+        if(items.count==0){
+            return cell
+        }
+        let itemm = items[indexPath.row]
+        cell.setItem(item: itemm)
         
         return cell
     }

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SY8-Xn-86N">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SY8-Xn-86N">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Videos-->
+        <!--Items-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="VideoListScreen" customModule="BeginnerTableView" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,20 +27,22 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JJs-mj-aVP" id="UR6-EG-aQf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bHO-Yo-Ace">
-                                                    <rect key="frame" x="12" y="7.6666666666666643" width="132" height="74.333333333333343"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="132" id="d4h-sM-NDl"/>
-                                                        <constraint firstAttribute="width" secondItem="bHO-Yo-Ace" secondAttribute="height" multiplier="16:9" id="f9E-6d-6Pd"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="pcS-IJ-9Lc">
-                                                    <rect key="frame" x="156" y="32.333333333333336" width="207" height="25"/>
+                                                    <rect key="frame" x="29.999999999999996" y="32.666666666666664" width="40.666666666666657" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="7IY-8E-WPW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.74510893489999996" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="zyA-sf-T6I">
+                                                    <rect key="frame" x="295" y="54" width="40.666666666666686" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="bDw-JC-8Yd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.74510893489999996" colorSpace="calibratedRGB"/>
@@ -51,14 +51,13 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="pcS-IJ-9Lc" firstAttribute="centerY" secondItem="UR6-EG-aQf" secondAttribute="centerY" id="AD9-3K-fSn"/>
-                                                <constraint firstItem="pcS-IJ-9Lc" firstAttribute="leading" secondItem="bHO-Yo-Ace" secondAttribute="trailing" constant="12" id="CA0-qM-INy"/>
-                                                <constraint firstItem="bHO-Yo-Ace" firstAttribute="centerY" secondItem="UR6-EG-aQf" secondAttribute="centerY" id="EvA-T6-U4o"/>
-                                                <constraint firstItem="bHO-Yo-Ace" firstAttribute="leading" secondItem="UR6-EG-aQf" secondAttribute="leading" constant="12" id="VNS-Rk-y9g"/>
-                                                <constraint firstAttribute="trailing" secondItem="pcS-IJ-9Lc" secondAttribute="trailing" constant="12" id="nNp-1r-auL"/>
+                                                <constraint firstItem="zyA-sf-T6I" firstAttribute="bottom" secondItem="UR6-EG-aQf" secondAttribute="bottomMargin" id="FC4-Hk-Qu9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zyA-sf-T6I" secondAttribute="trailing" constant="24.333333333333371" id="UCI-CY-jz1"/>
+                                                <constraint firstItem="pcS-IJ-9Lc" firstAttribute="leading" secondItem="UR6-EG-aQf" secondAttribute="leading" constant="30" id="UGA-MV-jPj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="videoImageView" destination="bHO-Yo-Ace" id="UbB-1V-neR"/>
+                                            <outlet property="priceLabell" destination="zyA-sf-T6I" id="NHS-Hd-vS8"/>
                                             <outlet property="videoTitleLabel" destination="pcS-IJ-9Lc" id="6yX-FW-860"/>
                                         </connections>
                                     </tableViewCell>
@@ -77,7 +76,7 @@
                             <constraint firstAttribute="trailing" secondItem="tK3-y4-snP" secondAttribute="trailing" id="oo8-EJ-SMb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Videos" id="3S2-qC-8Xh"/>
+                    <navigationItem key="navigationItem" title="Items" id="3S2-qC-8Xh"/>
                     <connections>
                         <outlet property="tableView" destination="tK3-y4-snP" id="xG8-c2-oXR"/>
                     </connections>
