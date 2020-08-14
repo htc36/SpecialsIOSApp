@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 11.0, *)
 class VideoListScreen: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -17,6 +18,8 @@ class VideoListScreen: UIViewController {
     var count = 20
     var date = "04/08/20"
     var url = URLComponents(string: "http://45.76.124.20:8080/api/getProducts?limit=20")!
+    let searchController = UISearchController(searchResultsController: nil)
+    var searchQuery = ""
 
     
     override func viewDidLoad() {
@@ -24,10 +27,14 @@ class VideoListScreen: UIViewController {
 //        let url = "http://45.76.124.20:8080/api/getProducts?dateOfSpecials=04/08/20&limit=20"
         url.queryItems = [URLQueryItem(name: "dateOfSpecials", value: "04/08/20")]
         getData(from: url)
-        videos = createArray()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Seach for a product"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     private func getData(from url: URLComponents){
-        let url = URL(string: "http://45.76.124.20:8080/api/getProducts?dateOfSpecials=" + date + "&limit=" + String(count))!
+        let url = URL(string: "http://45.76.124.20:8080/api/getProducts?dateOfSpecials=" + date + "&limit=" + String(count) + "&search=" + searchQuery)!
         let task = URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
             guard let data = data, error == nil else {
                 print("bad")
@@ -46,7 +53,6 @@ class VideoListScreen: UIViewController {
             
             self.items = json.rows
             DispatchQueue.main.async {
-                print(self.items)
                 self.tableView.reloadData()
             }
             })
@@ -58,22 +64,10 @@ class VideoListScreen: UIViewController {
 
     }
     
-
-    
-    func createArray() -> [Video] {
-        
-        let video1 = Video(image: #imageLiteral(resourceName: "beginner-first-app"), title: "Your First App")
-        let video2 = Video(image: #imageLiteral(resourceName: "dev-setup"), title: "My Dev Setup")
-        let video3 = Video(image: #imageLiteral(resourceName: "int-overview"), title: "iOS Interview")
-        let video4 = Video(image: #imageLiteral(resourceName: "ss-delegates"), title: "Buttons in TableViews")
-        let video5 = Video(image: #imageLiteral(resourceName: "ss-uipickerview-card"), title: "UIPickerView Tutorial")
-        let video6 = Video(image: #imageLiteral(resourceName: "vlog-4"), title: "Day in the Life")
-    
-        return [video1, video2, video3, video4, video5, video6]
-    }
 }
 
 
+@available(iOS 11.0, *)
 extension VideoListScreen: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,6 +84,16 @@ extension VideoListScreen: UITableViewDataSource, UITableViewDelegate {
         cell.setItem(item: itemm)
         
         return cell
+    }
+}
+
+@available(iOS 11.0, *)
+extension VideoListScreen: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        searchQuery = searchBar.text!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        getData(from: url)
+        
     }
 }
 

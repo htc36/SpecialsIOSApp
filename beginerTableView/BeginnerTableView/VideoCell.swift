@@ -10,6 +10,7 @@ import UIKit
 
 class VideoCell: UITableViewCell {
 
+    @IBOutlet weak var brandLabel: UILabel!
     @IBOutlet weak var videoTitleLabel: UILabel!
     
     @IBOutlet weak var priceLabell: UILabel!
@@ -17,6 +18,7 @@ class VideoCell: UITableViewCell {
         videoTitleLabel.text = video.title
     }
     func setItem(item : Items){
+        brandLabel.text = item.brand
         videoTitleLabel.text=item.name
         priceLabell.text=item.salePrice
     }
