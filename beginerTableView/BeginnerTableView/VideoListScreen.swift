@@ -14,17 +14,21 @@ class VideoListScreen: UIViewController {
     
     var videos: [Video] = []
     var items: [Items] = []
+    var count = 20
+    var date = "04/08/20"
+    var url = URLComponents(string: "http://45.76.124.20:8080/api/getProducts?limit=20")!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = "http://45.76.124.20:8080/api/getProducts?dateOfSpecials=04/08/20&limit=20"
+//        let url = "http://45.76.124.20:8080/api/getProducts?dateOfSpecials=04/08/20&limit=20"
+        url.queryItems = [URLQueryItem(name: "dateOfSpecials", value: "04/08/20")]
         getData(from: url)
         videos = createArray()
     }
-    
-    private func getData(from url: String){
-        let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: {data, response, error in
+    private func getData(from url: URLComponents){
+        let url = URL(string: "http://45.76.124.20:8080/api/getProducts?dateOfSpecials=" + date + "&limit=" + String(count))!
+        let task = URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
             guard let data = data, error == nil else {
                 print("bad")
                 return
