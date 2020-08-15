@@ -141,9 +141,10 @@ extension VideoListScreen: UISearchResultsUpdating {
         pageDown = false
         loaded = false
         searchQuery = searchBar.text!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         getData()
-        
+        if items.count != 0 {
+            tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        }
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchQuery = ""
@@ -151,7 +152,9 @@ extension VideoListScreen: UISearchResultsUpdating {
         pageDown = false
         loaded = false
         getData()
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        if items.count != 0 {
+            tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        }
     }
 }
 
