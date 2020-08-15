@@ -22,25 +22,24 @@ class VideoListScreen: UIViewController {
     var url = URLComponents(string: "http://45.76.124.20:8080/api/getProducts?limit=20")!
     let searchController = UISearchController(searchResultsController: nil)
     var searchQuery = ""
+    var pageDown = false
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let url = "http://45.76.124.20:8080/api/getProducts?dateOfSpecials=04/08/20&limit=20"
         url.queryItems = [URLQueryItem(name: "dateOfSpecials", value: "04/08/20")]
-        getData(from: url)
+        getData()
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Seach for a product"
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
-    private func getData(from url: URLComponents){
+    private func getData(){
         var base = "http://45.76.124.20:8080/api/getProducts?dateOfSpecials="
-        base += date + "&limit=" + String(count) + "&offset=" + offset
-        base += "&search=" + searchQuery
-        
-//        let url = URL(string: base + date + "&limit=" + String(count) + "&offset=" + offset + "&search=" + searchQuery)!
+        base += date + "&limit=" + String(count) + "&offset=" + String(offset) + "&search=" + searchQuery
+        print(base)
         let url = URL(string: base)!
         let task = URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
             guard let data = data, error == nil else {
@@ -57,8 +56,12 @@ class VideoListScreen: UIViewController {
             guard let json = result else {
                 return
             }
-            
-            self.items = json.rows
+            if (self.pageDown) {
+                self.items += json.rows
+                self.pageDown = false
+            }else {
+                self.items = json.rows
+            }
             self.totalProducts = json.total
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -104,6 +107,10 @@ extension VideoListScreen: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == count - 1 && indexPath.row < totalProducts {
             print(indexPath.row)
+            pageDown = true
+            offset += 20
+            getData()
+            
         }
     }
 }
@@ -113,7 +120,7 @@ extension VideoListScreen: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         searchQuery = searchBar.text!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        getData(from: url)
+        getData()
         
     }
 }
