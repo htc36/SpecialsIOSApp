@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B978E8224E776F900B34A24 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B978E8124E776F900B34A24 /* DetailVC.swift */; };
 		ED47EDA11ECF4D0E00F5FC0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47EDA01ECF4D0E00F5FC0E /* AppDelegate.swift */; };
 		ED47EDA61ECF4D0E00F5FC0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED47EDA41ECF4D0E00F5FC0E /* Main.storyboard */; };
 		ED47EDA81ECF4D0E00F5FC0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED47EDA71ECF4D0E00F5FC0E /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B978E8124E776F900B34A24 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		ED47ED9D1ECF4D0E00F5FC0E /* BeginnerTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeginnerTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED47EDA01ECF4D0E00F5FC0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED47EDA51ECF4D0E00F5FC0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				ED47EDA01ECF4D0E00F5FC0E /* AppDelegate.swift */,
 				ED47EDB21ECF4DD400F5FC0E /* VideoListScreen.swift */,
+				2B978E8124E776F900B34A24 /* DetailVC.swift */,
 				ED47EDB41ECF51B000F5FC0E /* VideoCell.swift */,
 				ED47EDB61ECF530000F5FC0E /* Video.swift */,
 				F13B7D4324E26D1500F26766 /* Item.swift */,
@@ -153,6 +156,7 @@
 				ED47EDB71ECF530000F5FC0E /* Video.swift in Sources */,
 				ED47EDB31ECF4DD400F5FC0E /* VideoListScreen.swift in Sources */,
 				ED47EDB51ECF51B000F5FC0E /* VideoCell.swift in Sources */,
+				2B978E8224E776F900B34A24 /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

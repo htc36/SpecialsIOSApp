@@ -15,7 +15,9 @@ class VideoListScreen: UIViewController {
     
     var videos: [Video] = []
     var items: [Items] = []
+    var totalProducts = 20
     var count = 20
+    var offset = 0
     var date = "04/08/20"
     var url = URLComponents(string: "http://45.76.124.20:8080/api/getProducts?limit=20")!
     let searchController = UISearchController(searchResultsController: nil)
@@ -34,7 +36,12 @@ class VideoListScreen: UIViewController {
         definesPresentationContext = true
     }
     private func getData(from url: URLComponents){
-        let url = URL(string: "http://45.76.124.20:8080/api/getProducts?dateOfSpecials=" + date + "&limit=" + String(count) + "&search=" + searchQuery)!
+        var base = "http://45.76.124.20:8080/api/getProducts?dateOfSpecials="
+        base += date + "&limit=" + String(count) + "&offset=" + offset
+        base += "&search=" + searchQuery
+        
+//        let url = URL(string: base + date + "&limit=" + String(count) + "&offset=" + offset + "&search=" + searchQuery)!
+        let url = URL(string: base)!
         let task = URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
             guard let data = data, error == nil else {
                 print("bad")
@@ -52,6 +59,7 @@ class VideoListScreen: UIViewController {
             }
             
             self.items = json.rows
+            self.totalProducts = json.total
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -59,9 +67,14 @@ class VideoListScreen: UIViewController {
 
             task.resume()
             self.tableView.reloadData()
-        print(self.items)
 
 
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailVC {
+            destination.item = items[(tableView.indexPathForSelectedRow?.row)!]
+            tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
+        }
     }
     
 }
@@ -84,6 +97,14 @@ extension VideoListScreen: UITableViewDataSource, UITableViewDelegate {
         cell.setItem(item: itemm)
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath:  IndexPath) {
+        performSegue(withIdentifier: "showProductDetail", sender: self)
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == count - 1 && indexPath.row < totalProducts {
+            print(indexPath.row)
+        }
     }
 }
 
