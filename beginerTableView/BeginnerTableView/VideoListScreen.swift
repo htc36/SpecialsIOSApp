@@ -18,7 +18,7 @@ class VideoListScreen: UIViewController, UISearchBarDelegate {
     var totalProducts = 20
     var count = 10
     var offset = 0
-    var date = "04/08/20"
+    var date = "2020-08-04"
     var url = URLComponents(string: "http://45.76.124.20:8080/api/getProducts?limit=20")!
     let searchController = UISearchController(searchResultsController: nil)
     var searchQuery = ""
@@ -77,12 +77,6 @@ class VideoListScreen: UIViewController, UISearchBarDelegate {
             self.loaded = true
             })
             task.resume()
-        
-            
-            
-            
-
-
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? DetailVC {
