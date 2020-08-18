@@ -40,6 +40,9 @@ class VideoListScreen: UIViewController, UISearchBarDelegate {
         definesPresentationContext = true
         searchController.searchBar.delegate = self;
     }
+    private func addTapped() {
+        print("hi")
+    }
     private func getData(){
         var base = "http://45.76.124.20:8080/api/getProducts?dateOfSpecials="
         base += date + "&limit=" + String(count) + "&offset=" + String(offset) + "&search=" + searchQuery

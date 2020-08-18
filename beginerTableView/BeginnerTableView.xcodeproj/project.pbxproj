@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2B978E8224E776F900B34A24 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B978E8124E776F900B34A24 /* DetailVC.swift */; };
-		3F26E6D416F9DBC494B66B18 /* Pods_BeginnerTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79747C6343CA45BB377A72FC /* Pods_BeginnerTableView.framework */; };
+		9E131B2E24EB966F00F81134 /* ScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E131B2D24EB966F00F81134 /* ScannerController.swift */; };
+		BA68E821BA943A3D1C4C1FA6 /* Pods_BeginnerTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C88CDDE405B7BDE1BCBA7E /* Pods_BeginnerTableView.framework */; };
 		ED47EDA11ECF4D0E00F5FC0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47EDA01ECF4D0E00F5FC0E /* AppDelegate.swift */; };
 		ED47EDA61ECF4D0E00F5FC0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED47EDA41ECF4D0E00F5FC0E /* Main.storyboard */; };
 		ED47EDA81ECF4D0E00F5FC0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED47EDA71ECF4D0E00F5FC0E /* Assets.xcassets */; };
@@ -20,10 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06C88CDDE405B7BDE1BCBA7E /* Pods_BeginnerTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeginnerTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B978E8124E776F900B34A24 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
-		6C19997B27EA437EFBA5F707 /* Pods-BeginnerTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeginnerTableView.release.xcconfig"; path = "Target Support Files/Pods-BeginnerTableView/Pods-BeginnerTableView.release.xcconfig"; sourceTree = "<group>"; };
-		79747C6343CA45BB377A72FC /* Pods_BeginnerTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeginnerTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E51630F8786DC2D41AB6A07B /* Pods-BeginnerTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeginnerTableView.debug.xcconfig"; path = "Target Support Files/Pods-BeginnerTableView/Pods-BeginnerTableView.debug.xcconfig"; sourceTree = "<group>"; };
+		2D04BE1D473ECF60A4E8C548 /* Pods-BeginnerTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeginnerTableView.debug.xcconfig"; path = "Target Support Files/Pods-BeginnerTableView/Pods-BeginnerTableView.debug.xcconfig"; sourceTree = "<group>"; };
+		9E131B2D24EB966F00F81134 /* ScannerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerController.swift; sourceTree = "<group>"; };
+		CB90B57462738AFE35645C22 /* Pods-BeginnerTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeginnerTableView.release.xcconfig"; path = "Target Support Files/Pods-BeginnerTableView/Pods-BeginnerTableView.release.xcconfig"; sourceTree = "<group>"; };
 		ED47ED9D1ECF4D0E00F5FC0E /* BeginnerTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeginnerTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED47EDA01ECF4D0E00F5FC0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED47EDA51ECF4D0E00F5FC0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,27 +43,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F26E6D416F9DBC494B66B18 /* Pods_BeginnerTableView.framework in Frameworks */,
+				BA68E821BA943A3D1C4C1FA6 /* Pods_BeginnerTableView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4FAA210E84E40027D9C83C68 /* Pods */ = {
+		76542EFF3B91E9CD21FDB328 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E51630F8786DC2D41AB6A07B /* Pods-BeginnerTableView.debug.xcconfig */,
-				6C19997B27EA437EFBA5F707 /* Pods-BeginnerTableView.release.xcconfig */,
+				2D04BE1D473ECF60A4E8C548 /* Pods-BeginnerTableView.debug.xcconfig */,
+				CB90B57462738AFE35645C22 /* Pods-BeginnerTableView.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		B4ABED841372A71CFA9B6228 /* Frameworks */ = {
+		A84D27ABCE6E0F188B440008 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				79747C6343CA45BB377A72FC /* Pods_BeginnerTableView.framework */,
+				06C88CDDE405B7BDE1BCBA7E /* Pods_BeginnerTableView.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -71,8 +72,8 @@
 			children = (
 				ED47ED9F1ECF4D0E00F5FC0E /* BeginnerTableView */,
 				ED47ED9E1ECF4D0E00F5FC0E /* Products */,
-				4FAA210E84E40027D9C83C68 /* Pods */,
-				B4ABED841372A71CFA9B6228 /* Frameworks */,
+				76542EFF3B91E9CD21FDB328 /* Pods */,
+				A84D27ABCE6E0F188B440008 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +94,7 @@
 				ED47EDB41ECF51B000F5FC0E /* VideoCell.swift */,
 				ED47EDB61ECF530000F5FC0E /* Video.swift */,
 				F13B7D4324E26D1500F26766 /* Item.swift */,
+				9E131B2D24EB966F00F81134 /* ScannerController.swift */,
 				ED47EDA41ECF4D0E00F5FC0E /* Main.storyboard */,
 				ED47EDA71ECF4D0E00F5FC0E /* Assets.xcassets */,
 				ED47EDA91ECF4D0E00F5FC0E /* LaunchScreen.storyboard */,
@@ -108,11 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED47EDAF1ECF4D0E00F5FC0E /* Build configuration list for PBXNativeTarget "BeginnerTableView" */;
 			buildPhases = (
-				CEF77F3452C847403CD9CB47 /* [CP] Check Pods Manifest.lock */,
+				2699D8A570C274342E401771 /* [CP] Check Pods Manifest.lock */,
 				ED47ED991ECF4D0E00F5FC0E /* Sources */,
 				ED47ED9A1ECF4D0E00F5FC0E /* Frameworks */,
 				ED47ED9B1ECF4D0E00F5FC0E /* Resources */,
-				5F22B78E93991296296B1EE2 /* [CP] Embed Pods Frameworks */,
+				66A7149C7FD1CDE3486C7C8B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,7 +137,7 @@
 				TargetAttributes = {
 					ED47ED9C1ECF4D0E00F5FC0E = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = H69U55MWXW;
+						DevelopmentTeam = 88376Y72S7;
 						LastSwiftMigration = 1100;
 						ProvisioningStyle = Automatic;
 					};
@@ -174,27 +176,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5F22B78E93991296296B1EE2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BeginnerTableView/Pods-BeginnerTableView-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
-				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeginnerTableView/Pods-BeginnerTableView-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CEF77F3452C847403CD9CB47 /* [CP] Check Pods Manifest.lock */ = {
+		2699D8A570C274342E401771 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -216,6 +198,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		66A7149C7FD1CDE3486C7C8B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeginnerTableView/Pods-BeginnerTableView-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeginnerTableView/Pods-BeginnerTableView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -228,6 +228,7 @@
 				ED47EDB71ECF530000F5FC0E /* Video.swift in Sources */,
 				ED47EDB31ECF4DD400F5FC0E /* VideoListScreen.swift in Sources */,
 				ED47EDB51ECF51B000F5FC0E /* VideoCell.swift in Sources */,
+				9E131B2E24EB966F00F81134 /* ScannerController.swift in Sources */,
 				2B978E8224E776F900B34A24 /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,13 +370,13 @@
 		};
 		ED47EDB01ECF4D0E00F5FC0E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E51630F8786DC2D41AB6A07B /* Pods-BeginnerTableView.debug.xcconfig */;
+			baseConfigurationReference = 2D04BE1D473ECF60A4E8C548 /* Pods-BeginnerTableView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H69U55MWXW;
+				DEVELOPMENT_TEAM = 88376Y72S7;
 				INFOPLIST_FILE = BeginnerTableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.seanallen.BeginnerTableView;
+				PRODUCT_BUNDLE_IDENTIFIER = "Harry-Collard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
@@ -384,13 +385,13 @@
 		};
 		ED47EDB11ECF4D0E00F5FC0E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C19997B27EA437EFBA5F707 /* Pods-BeginnerTableView.release.xcconfig */;
+			baseConfigurationReference = CB90B57462738AFE35645C22 /* Pods-BeginnerTableView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H69U55MWXW;
+				DEVELOPMENT_TEAM = 88376Y72S7;
 				INFOPLIST_FILE = BeginnerTableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = co.seanallen.BeginnerTableView;
+				PRODUCT_BUNDLE_IDENTIFIER = "Harry-Collard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
