@@ -7,6 +7,4 @@ target 'BeginnerTableView' do
 
   # Pods for BeginnerTableView
   pod 'Charts'
-  pod 'TinyConstraints'
-
 end

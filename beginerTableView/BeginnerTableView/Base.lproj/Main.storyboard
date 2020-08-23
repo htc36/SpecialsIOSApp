@@ -93,7 +93,13 @@
                             <constraint firstAttribute="trailing" secondItem="tK3-y4-snP" secondAttribute="trailing" id="oo8-EJ-SMb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Items" id="3S2-qC-8Xh"/>
+                    <navigationItem key="navigationItem" title="Items" largeTitleDisplayMode="always" id="3S2-qC-8Xh">
+                        <barButtonItem key="rightBarButtonItem" title="Scanner" id="Fhx-bj-uaq">
+                            <connections>
+                                <segue destination="O3p-Vp-NyV" kind="show" id="cfx-du-MaK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="tK3-y4-snP" id="xG8-c2-oXR"/>
                         <segue destination="CFy-b3-s8F" kind="show" identifier="showProductDetail" id="qTz-ie-XyP"/>
@@ -102,6 +108,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="933.60000000000002" y="-546.79802955665025"/>
+        </scene>
+        <!--Scanner Controller-->
+        <scene sceneID="NRb-PC-Rjh">
+            <objects>
+                <viewController id="O3p-Vp-NyV" customClass="ScannerController" customModule="BeginnerTableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bj4-m8-5Js"/>
+                        <viewControllerLayoutGuide type="bottom" id="WS6-wy-Oxd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aXO-0q-UWy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0E5-uV-0mN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X2b-Fy-CWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="193"/>
         </scene>
         <!--Item-->
         <scene sceneID="VFe-Hj-l4R">
