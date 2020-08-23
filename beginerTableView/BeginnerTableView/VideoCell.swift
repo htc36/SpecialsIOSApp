@@ -18,8 +18,8 @@ class VideoCell: UITableViewCell {
         videoTitleLabel.text = video.title
     }
     func setItem(item : Items){
-        brandLabel.text = item.brand
-        videoTitleLabel.text=item.name
+        brandLabel.text = item.brand.capitalized
+        videoTitleLabel.text=item.name.capitalized
         priceLabell.text=item.salePrice
     }
     
