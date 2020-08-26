@@ -21,6 +21,7 @@ class DetailVC: UIViewController, IAxisValueFormatter {
     var item: Items?
     var nameValues: [String]!
     var priceValues: [Double]!
+    var data = LineChartData()
     
 //    lazy var lineChartView: LineChartView = {
 //        let chartView = LineChartView()
@@ -34,11 +35,8 @@ class DetailVC: UIViewController, IAxisValueFormatter {
         productPriceLabel.text = item?.salePrice
         title = item?.name.capitalized
         adjustLargeTitleSize()
-        var barcode = item!.barcode
-        if barcode[barcode.startIndex] == "0" {
-            barcode.remove(at: barcode.startIndex)
-        }
-        let urll = URL(string: "https://static.countdown.co.nz/assets/product-images/big/" + barcode + ".jpg")
+        var image = item!.image
+        let urll = URL(string: "https://static.countdown.co.nz/assets/product-images/big/" + image)
         lineChartView.backgroundColor = .systemBlue
         lineChartView.xAxis.valueFormatter = self
         lineChartView.rightAxis.enabled = false
@@ -56,8 +54,7 @@ class DetailVC: UIViewController, IAxisValueFormatter {
         getData()
         productImage.load(url: urll!)
 }
-    
-    private func test() {
+    private func createCountdownGraph() {
         var lineChartEntry = [ChartDataEntry]()
         var index = Double(0)
         for price in priceValues{
@@ -73,13 +70,36 @@ class DetailVC: UIViewController, IAxisValueFormatter {
 //        line1.drawFilledEnabled = true
 //        line1.drawHorizontalHighlightIndicatorEnabled = false
 //        line1.highlightColor = .systemRed
-        let data = LineChartData()
+//        let data = LineChartData()
         data.addDataSet(line1)
         data.setDrawValues(false)
         lineChartView.data = data
     }
+    private func createPaknSaveLine(products : [PakNsaveResult]) {
+        let first = products.first
+        priceValues = first!.price
+        nameValues = first!.date
+        var lineChartEntry = [ChartDataEntry]()
+        var index = Double(0)
+//        for price in priceValues{
+//            lineChartEntry.append(ChartDataEntry(x: index, y: price))
+//            index += 1
+//        }
+//        let line1 = LineChartDataSet(entries: lineChartEntry, label: "Date")
+//        line1.drawCirclesEnabled = false
+//        line1.mode = .horizontalBezier
+//        line1.setColor(.red)
+//        //        line1.fill = Fill(color : .white)
+//        //        line1.fillAlpha = 0.8
+//        //        line1.drawFilledEnabled = true
+//        //        line1.drawHorizontalHighlightIndicatorEnabled = false
+//        //        line1.highlightColor = .systemRed
+//        data.addDataSet(line1)
+//        data.setDrawValues(false)
+//        lineChartView.data = data
+    }
     private func getData(){
-        let base = "http://45.76.124.20:8080/api/getHistory?barcode=" + item!.barcode
+        let base = "http://45.76.124.20:8080/api/pakNsave/getSingleLinkedProductHistory?code=" + item!.code + "&location=Taupo"
         print(base)
         let url = URL(string: base)!
         let task = URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
@@ -99,9 +119,10 @@ class DetailVC: UIViewController, IAxisValueFormatter {
             }
             
             DispatchQueue.main.async {
-                self.nameValues = json.dates
-                self.priceValues = json.prices
-                self.test()
+                self.nameValues = json.countdown.date
+                self.priceValues = json.countdown.price
+                self.createCountdownGraph()
+                self.createPaknSaveLine(products: json.paknsave)
             }
             })
             task.resume()
@@ -147,7 +168,4 @@ class ChartStringFormatter: NSObject, IAxisValueFormatter {
     }
 }
 
-struct History: Codable {
-    let dates: [String]
-    let prices : [Double]
-}
+

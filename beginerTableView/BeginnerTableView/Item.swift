@@ -15,8 +15,26 @@ struct Response: Codable {
 struct Items: Codable {
     let name: String
     let brand: String
+//    let volSize: String
     let salePrice: String
     let origPrice: String
     let barcode: String
     let code: String
+    let image: String
+}
+
+struct History: Codable {
+    let countdown: CountdownResult
+    let paknsave : [PakNsaveResult]
+}
+struct CountdownResult : Codable {
+    let date : [String]
+    let price : [Double]
+}
+struct PakNsaveResult : Codable {
+    let date : [String]
+    let price : [Double]
+    let productId : String
+    let name : String
+    let quantityType : String
 }

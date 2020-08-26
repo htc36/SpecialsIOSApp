@@ -13,7 +13,6 @@ class VideoListScreen: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var videos: [Video] = []
     var items: [Items] = []
     var totalProducts = 20
     var count = 10
@@ -39,9 +38,6 @@ class VideoListScreen: UIViewController, UISearchBarDelegate {
         navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
         searchController.searchBar.delegate = self;
-    }
-    private func addTapped() {
-        print("hi")
     }
     private func getData(){
         var base = "http://45.76.124.20:8080/api/getProducts?dateOfSpecials="
