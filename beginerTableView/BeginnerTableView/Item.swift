@@ -22,17 +22,21 @@ struct Items: Codable {
     let code: String
     let image: String
 }
-
 struct History: Codable {
+    let dates: [String]
+    let result: InnerHistory
+}
+
+struct InnerHistory: Codable {
     let countdown: CountdownResult
     let paknsave : [PakNsaveResult]
 }
 struct CountdownResult : Codable {
-    let date : [String]
+    let date : [Double]
     let price : [Double]
 }
 struct PakNsaveResult : Codable {
-    let date : [String]
+    let date : [Double]
     let price : [Double]
     let productId : String
     let name : String

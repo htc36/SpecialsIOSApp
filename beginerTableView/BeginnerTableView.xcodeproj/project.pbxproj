@@ -16,6 +16,7 @@
 		ED47EDAB1ECF4D0E00F5FC0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED47EDA91ECF4D0E00F5FC0E /* LaunchScreen.storyboard */; };
 		ED47EDB31ECF4DD400F5FC0E /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47EDB21ECF4DD400F5FC0E /* HomeScreenVC.swift */; };
 		ED47EDB51ECF51B000F5FC0E /* ProductCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED47EDB41ECF51B000F5FC0E /* ProductCellVC.swift */; };
+		F1358B4124F7E7E200C9FD8B /* BallonMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1358B4024F7E7E200C9FD8B /* BallonMaker.swift */; };
 		F13B7D4424E26D1500F26766 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13B7D4324E26D1500F26766 /* Item.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		ED47EDAC1ECF4D0E00F5FC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED47EDB21ECF4DD400F5FC0E /* HomeScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
 		ED47EDB41ECF51B000F5FC0E /* ProductCellVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCellVC.swift; sourceTree = "<group>"; };
+		F1358B4024F7E7E200C9FD8B /* BallonMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallonMaker.swift; sourceTree = "<group>"; };
 		F13B7D4324E26D1500F26766 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 				ED47EDA01ECF4D0E00F5FC0E /* AppDelegate.swift */,
 				F1386B6424F6007E00BACC3F /* Controllers */,
 				F13B7D4324E26D1500F26766 /* Item.swift */,
+				F1358B4024F7E7E200C9FD8B /* BallonMaker.swift */,
 				9E131B2D24EB966F00F81134 /* ScannerController.swift */,
 				ED47EDA41ECF4D0E00F5FC0E /* Main.storyboard */,
 				ED47EDA71ECF4D0E00F5FC0E /* Assets.xcassets */,
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F13B7D4424E26D1500F26766 /* Item.swift in Sources */,
+				F1358B4124F7E7E200C9FD8B /* BallonMaker.swift in Sources */,
 				ED47EDA11ECF4D0E00F5FC0E /* AppDelegate.swift in Sources */,
 				ED47EDB31ECF4DD400F5FC0E /* HomeScreenVC.swift in Sources */,
 				ED47EDB51ECF51B000F5FC0E /* ProductCellVC.swift in Sources */,

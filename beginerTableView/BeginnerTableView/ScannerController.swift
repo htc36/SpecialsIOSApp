@@ -9,6 +9,7 @@
 import UIKit
 
 class ScannerController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,3 +29,4 @@ class ScannerController: UIViewController {
     */
 
 }
+
