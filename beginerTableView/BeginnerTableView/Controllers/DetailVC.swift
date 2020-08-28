@@ -81,6 +81,9 @@ class DetailVC: UIViewController, IAxisValueFormatter {
         lineChartView.data = data
     }
     private func createPaknSaveLine(products : [PakNsaveResult]) {
+        if (products.isEmpty) {
+            return
+        }
         let first = products.first
         let pricees = first!.price
         let dateIndexes = first!.date
